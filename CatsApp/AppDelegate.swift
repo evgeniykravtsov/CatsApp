@@ -12,8 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     enum urlExamples: String {
-        case imageURL = "https://https://cataas.com/cat"
-        case gifURL = "https://https://cataas.com/cat/gif"
+        case imageURL = "https://cataas.com/cat?width=250"
+        case gifURL = "https://cataas.com/cat/gif"
         case factUrl = "https://cat-fact.herokuapp.com/facts/random?amount=1"
     }
 
@@ -46,7 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             if let data = data, let image = UIImage(data: data) {
-//                return image
+                let startVC = UIApplication.shared.windows.first!.rootViewController as! MainViewController
+                
+                    DispatchQueue.main.async {
+                        startVC.imageView.image = image
+//                        self.activityIndicator.stopAnimating()
+                    }
+                
             }
         }.resume()
     }
