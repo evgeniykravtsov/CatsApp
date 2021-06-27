@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let startVC = UIApplication.shared.windows.first!.rootViewController as! MainViewController
                 
                     DispatchQueue.main.async {
-                        startVC.imageView.image = image
+                        startVC.catImageView.image = image
 //                        self.activityIndicator.stopAnimating()
                     }
                 
