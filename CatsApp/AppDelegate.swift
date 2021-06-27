@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             if let data = data, let image = UIImage(data: data) {
-                return image
+//                return image
             }
         }.resume()
     }
