@@ -11,9 +11,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    enum urlExamples: String {
+        case imageURL = "https://https://cataas.com/cat"
+        case gifURL = "https://https://cataas.com/cat/gif"
+        case factUrl = "https://cat-fact.herokuapp.com/facts/random?amount=1"
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        fetchImage()
         return true
     }
 
@@ -31,6 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    private func fetchImage() {
+        guard let url = URL(string: urlExamples.imageURL.rawValue) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let data = data, let image = UIImage(data: data) {
+                return image
+            }
+        }.resume()
+    }
 }
 
