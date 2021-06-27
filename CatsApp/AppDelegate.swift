@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         fetchImage()
         fetchFact()
+        fetchGif()
         return true
     }
 
@@ -87,12 +88,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     DispatchQueue.main.async {
                                         startVC.catFactLabel.text = fact.text
                                     }
-                
             }
             catch let error {
                 print (error)
             }
 
+        }.resume()
+    }
+    
+    private func fetchGif() {
+        guard let url = URL(string: urlExamples.gifURL.rawValue) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let data = data, let image = UIImage(data: data) {
+                let startVC = UIApplication.shared.windows.first!.rootViewController as! MainViewController
+                
+                    DispatchQueue.main.async {
+                        startVC.catGifView.image = image
+//                        self.activityIndicator.stopAnimating()
+                    }
+                
+            }
         }.resume()
     }
     
