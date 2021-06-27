@@ -1,4 +1,5 @@
 import UIKit
+import FLAnimatedImage
 
 class MainViewController: UIViewController {
     
@@ -6,8 +7,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var catFactLabel: UILabel!
     
-    @IBOutlet weak var catGifView: UIImageView!
+    @IBOutlet weak var catGifView: FLAnimatedImageView!
     
+    
+
+
     @IBOutlet weak var factButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!

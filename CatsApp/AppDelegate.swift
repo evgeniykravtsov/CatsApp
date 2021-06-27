@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FLAnimatedImage
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -105,11 +107,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
-            if let data = data, let image = UIImage(data: data) {
+            if let data = data {
                 let startVC = UIApplication.shared.windows.first!.rootViewController as! MainViewController
                 
                     DispatchQueue.main.async {
-                        startVC.catGifView.image = image
+                        let imageData = try? FLAnimatedImage(animatedGIFData: data)
+                        
+                        startVC.catGifView.animatedImage = imageData
 //                        self.activityIndicator.stopAnimating()
                     }
                 
