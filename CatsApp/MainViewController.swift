@@ -9,8 +9,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var catGifView: FLAnimatedImageView!
     
+    var isFirstClick: Bool = true
+  
     
-
 
     @IBOutlet weak var factButton: UIButton!
     
@@ -19,6 +20,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
+    @IBAction func factActionButtom() {
+        if isFirstClick {
+            factButton.setTitle("mooore 🐱", for: .normal)
+            isFirstClick = !isFirstClick
+            
+        }
+    }
 }
 

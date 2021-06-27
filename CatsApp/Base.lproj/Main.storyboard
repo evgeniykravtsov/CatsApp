@@ -44,6 +44,9 @@
                                     <color key="titleShadowColor" systemColor="systemOrangeColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
                                 </state>
+                                <connections>
+                                    <action selector="factActionButtom" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vuh-ll-6WZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4S-sK-ih8">
                                 <rect key="frame" x="42" y="227" width="330" height="150"/>
