@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		274A08D50D1B66CCB1AC949E /* Pods_CatsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A964206308B8617AD0B6AB3C /* Pods_CatsApp.framework */; };
+		3CD3EDA42689142F00BAC1B6 /* dataExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3EDA32689142F00BAC1B6 /* dataExamples.swift */; };
 		97F66DE92688B1EC008728E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F66DE82688B1EC008728E2 /* AppDelegate.swift */; };
 		97F66DEB2688B1EC008728E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F66DEA2688B1EC008728E2 /* SceneDelegate.swift */; };
 		97F66DED2688B1EC008728E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F66DEC2688B1EC008728E2 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CD3EDA32689142F00BAC1B6 /* dataExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataExamples.swift; sourceTree = "<group>"; };
 		72E200A6454921472CB52B46 /* Pods-CatsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsApp.release.xcconfig"; path = "Target Support Files/Pods-CatsApp/Pods-CatsApp.release.xcconfig"; sourceTree = "<group>"; };
 		97F66DE52688B1EC008728E2 /* CatsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F66DE82688B1EC008728E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +49,6 @@
 				BB6CC6D9A2F59AB182208462 /* Pods-CatsApp.debug.xcconfig */,
 				72E200A6454921472CB52B46 /* Pods-CatsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -76,6 +77,7 @@
 				97F66DEA2688B1EC008728E2 /* SceneDelegate.swift */,
 				97F66DEC2688B1EC008728E2 /* MainViewController.swift */,
 				97F66DEE2688B1EC008728E2 /* Main.storyboard */,
+				3CD3EDA32689142F00BAC1B6 /* dataExamples.swift */,
 				97F66DF12688B1ED008728E2 /* Assets.xcassets */,
 				97F66DF32688B1ED008728E2 /* LaunchScreen.storyboard */,
 			);
@@ -206,6 +208,7 @@
 			files = (
 				97F66DED2688B1EC008728E2 /* MainViewController.swift in Sources */,
 				97F66DE92688B1EC008728E2 /* AppDelegate.swift in Sources */,
+				3CD3EDA42689142F00BAC1B6 /* dataExamples.swift in Sources */,
 				97F66DEB2688B1EC008728E2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
