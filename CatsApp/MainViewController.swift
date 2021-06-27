@@ -8,18 +8,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var catFactLabel: UILabel!
     @IBOutlet weak var catGifView: FLAnimatedImageView!
     
-    var isFirstClick: Bool = true
     
-    
+
     @IBOutlet weak var factButton: UIButton!
+    
+    var isFirstClick: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        factButton.layer.cornerRadius = 10
     }
     
     @IBAction func factActionButtom() {
         if isFirstClick {
-            factButton.setTitle("mooore 🐱", for: .normal)
+            factButton.setTitle("mooore!😻", for: .normal)
             isFirstClick = !isFirstClick
         }
         updateData()
