@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,9 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case gifURL = "https://cataas.com/cat/gif"
         case factUrl = "https://cat-fact.herokuapp.com/facts/random?amount=1"
     }
+    
+    struct Fact:Decodable {
+        let _id: String?
+        let __v: Int?
+        let text: String
+        let updateAt: String?
+        let deleted: Bool?
+        let source: String?
+        let sentCount: Int?
+    }
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         fetchImage()
+        fetchFact()
         return true
     }
 
@@ -56,5 +67,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }.resume()
     }
+    
+    private func fetchFact() {
+        guard let url = URL(string: urlExamples.factUrl.rawValue) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let data = data else { return }
+            do {
+                let fact = try JSONDecoder().decode(Fact.self, from: data)
+                DispatchQueue.main.async {
+                    print(fact, "<<<<<<<<<<FACT")
+                }
+                                let startVC = UIApplication.shared.windows.first!.rootViewController as! MainViewController
+                
+                                    DispatchQueue.main.async {
+                                        startVC.catFactLabel.text = fact.text
+                                    }
+                
+            }
+            catch let error {
+                print (error)
+            }
+
+        }.resume()
+    }
+    
 }
 
